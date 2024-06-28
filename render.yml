@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: browserbox-web
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    buildCommand: ./deploy-scripts/build_docker.sh
+    startCommand: ./deploy-scripts/start_docker.sh
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: HOST
+        value: example.com
+      - key: EMAIL
+        value: your-email@example.com
